@@ -1,43 +1,94 @@
-# Page Object Methods - Selenium
-## Axel Van Dyck
+# Page Object Model Framework with Selenium WebDriver (Python)
+### Axel Van Dyck
 
-Este proyecto contiene prácticas de automatización en Python utilizando Selenium y el modelo Page Object Model (POM) para manejar una página tipo red social. 
-Los archivos y clases están estructurados para manejar acciones clave en la página, como registro de usuario, inicio de sesión, subida y eliminación de publicaciones, y otras interacciones web.
+---
 
-## Estructura del Proyecto
+## 📌 Descripción del Proyecto
 
-El proyecto se compone de aproximadamente 5 archivos, cada uno diseñado para representar diferentes secciones y funcionalidades de la página. A continuación, se describen las principales clases y métodos incluidos.
+Este proyecto contiene prácticas de automatización de pruebas UI desarrolladas en **Python utilizando Selenium WebDriver**, aplicando el patrón de diseño **Page Object Model (POM)**.
 
-### Clases y Métodos Principales
+Forma parte de los ejercicios realizados durante el programa de formación de TripleTen, con el objetivo de fortalecer habilidades en automatización de pruebas y diseño de frameworks básicos de testing.
 
-1. **Clases de atributos de objeto
-   - Representa la página.
-   - **Inicializadores**
-   - **Atributos (Localizadores)**
-   - **Métodos**
-   
-2. **Clases de pruebas con @classmethod**
-   - Clase de pruebas que utiliza Selenium WebDriver
-   - **Métodos**:
-     - `setup_class()`: Método de configuración que abre el navegador y navega a la URL de registro (`https://around-v1.nm.tripleten-services.com/signup`), y crea una instancia de `RegistrationPageAround`.
-     - `test_methods()`: Métodos de pruebas automatizadas.
-     - `teardown_class()`: Método de limpieza que cierra el navegador al finalizar la prueba.
+El enfoque principal es la automatización de flujos funcionales en una aplicación tipo red social, simulando interacciones reales de usuario.
 
-## Funcionalidades Implementadas
+---
 
-Este proyecto incluye varias prácticas y funcionalidades para interactuar con elementos web en la página de red social, como:
+## 🏗️ Estructura del Proyecto
 
-- Registro de nuevos usuarios.
-- Interacción con elementos Web.
-- Inicio de sesión y autenticación.
-- Localización de elementos web en las herramientas de desarrollo.
-- Subida de fotos.
-- Eliminación de publicaciones.
+El proyecto está compuesto por aproximadamente 5 archivos, organizados para representar páginas, localizadores y casos de prueba.
 
-## Estructura del Código
+Esta estructura busca mantener el código modular, legible y fácil de mantener.
 
-- **Page Object Model (POM)**: Cada página de la aplicación está representada por una clase, y cada clase contiene los métodos específicos para interactuar con los elementos de esa página.
-- **Uso de Localizadores y Esperas**: Se utilizan localizadores para acceder a los elementos, y se aplican esperas explícitas (`WebDriverWait`) para asegurar que los elementos estén presentes antes de interactuar con ellos.
-- **Modularidad**: Cada funcionalidad está implementada en su propia clase y archivo, lo que permite un código más limpio y organizado.
+---
 
-### Este proyecto busca mejorar mis habilidades de automatización con Selenium, Python, y Selenium IDE, y trabajar con localizadores y también solicitudes en caso de ser necesario, para hacer pruebas.
+## 🧱 Arquitectura del Framework
+
+### 📄 Page Object Model (POM)
+
+Se implementa el patrón **Page Object Model**, donde:
+
+- Cada página de la aplicación se representa como una clase independiente
+- Las clases encapsulan localizadores y métodos de interacción
+- Se separa la lógica de la UI de la lógica de pruebas
+- Se reduce la duplicación de código y se mejora la mantenibilidad
+
+---
+
+### 🧪 Estructura de Pruebas
+
+Las pruebas están organizadas utilizando clases con `@classmethod`, manejando el ciclo de vida de ejecución:
+
+#### 🔧 setup_class()
+- Inicializa el WebDriver
+- Abre el navegador
+- Navega a la URL de registro:
+  `https://around-v1.nm.tripleten-services.com/signup`
+- Inicializa las Page Objects necesarias
+
+#### ▶️ test_methods()
+- Ejecuta los escenarios de prueba automatizados
+- Valida flujos funcionales principales de la aplicación
+
+#### 🧹 teardown_class()
+- Cierra el navegador al finalizar la ejecución de las pruebas
+
+---
+
+## 🧪 Funcionalidades Automatizadas
+
+- Registro de nuevos usuarios
+- Inicio de sesión (login)
+- Interacción con elementos de la interfaz web
+- Localización de elementos en el DOM
+- Subida de imágenes
+- Eliminación de publicaciones
+- Validación de comportamiento de la aplicación
+
+---
+
+## ⏳ Estrategia de Automatización
+
+- Uso de localizadores para identificar elementos del DOM
+- Implementación de esperas explícitas con `WebDriverWait`
+- Manejo de elementos dinámicos para evitar fallos de sincronización
+- Validación de estados antes de ejecutar acciones
+
+---
+
+## 🧠 Objetivo de Aprendizaje
+
+Este proyecto tiene como objetivo reforzar habilidades en:
+
+- Automatización de pruebas UI con Selenium WebDriver
+- Implementación del patrón Page Object Model (POM)
+- Organización de frameworks de testing básicos
+- Manejo de localizadores en el DOM
+- Construcción de flujos de prueba automatizados
+
+---
+
+## 📊 Conclusión
+
+Este proyecto representa una práctica estructurada de automatización UI enfocada en el uso del patrón Page Object Model para mejorar la organización del código.
+
+La separación entre lógica de pruebas y lógica de interacción con la interfaz permite mejorar la claridad, escalabilidad y mantenibilidad del framework.
